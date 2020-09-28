@@ -1,0 +1,21 @@
+{%extends 'base.html' %}
+{%block content%}
+Welcome 
+{{user.username}}
+
+
+<p>Already have an account? Then please <a href="{%url 'login' %}">sign in</a>.</p>
+<p>Not have an account then please <a href="{%url 'signup'%}">sign up</a>
+    {%if user.is_authenticated%}
+<br/>
+Name: {{user.first_name}} {{user.last_name}}
+<br/>
+Email: {{user.email}}
+<br/>
+
+<button><a href="{%url 'logout'%}">logout</a></button>
+<button><a href="{%url 'profile_update'%}">Update Profile</a></button>
+<button><a href="{%url 'change_password'%}">Change Password</a></button>
+    {%endif%}
+{% endblock %}
+
