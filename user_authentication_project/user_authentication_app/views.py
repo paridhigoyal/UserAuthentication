@@ -72,7 +72,6 @@ class ChangeUserPasswordView(LoginRequiredMixin, generic.FormView):
 
 class SignUpView(generic.CreateView):
     form_class = CustomSignupForm
-    # success_url = reverse_lazy('login')
     template_name = 'account/signup.html'
 
     def get(self, request, *args, **kwargs):

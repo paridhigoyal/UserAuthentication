@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-# from decouple import config
-# from django.conf import settings
-# from django.core.mail import sent_mail
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -141,8 +138,6 @@ USE_TZ = True
 SITE_ID = 2
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
-# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-# EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

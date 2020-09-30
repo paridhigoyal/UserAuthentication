@@ -8,13 +8,8 @@ from .views import (ChangeUserPasswordView, HomePage, LoginView, LogoutView,
                     SignUpView, UpdateProfileView)
 
 urlpatterns = [
-    # path('', views.index, name='index'),
-    # path('signup', views.signup, name='signup'),
     path('', HomePage.as_view(), name='index'),
     path('signup', SignUpView.as_view(), name='signup'),
-    # path('login', views.user_login, name='login'),
-    # path('logout', views.user_logout, name='logout'),
-    # path('profile_update', views.update_profile, name='profile_update'),
     path('login', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('profile_update', UpdateProfileView.as_view(), name='profile_update'),
@@ -30,8 +25,6 @@ urlpatterns = [
     path('password_reset_complete', PasswordResetCompleteView.as_view(
         template_name='account/password_reset_complete.html'),
         name='password_reset_complete'),
-    # path('change_password', views.change_user_password,
-    #      name='change_password'),
     path('change_password', ChangeUserPasswordView.as_view(),
          name='change_password'),
 ]
